@@ -94,7 +94,8 @@ load_attractors_from_gated_data <- function(dir, asinh.cofactor)
 		res <- rbind(res, tab)
 	}
     
-    downsampled.data <- downsample_by(res, "population", 1000)
+    downsampled.data <- downsample_by(res, "population", 2000)
+#     downsampled.data <- downsample_by(res, "population", 1000)
     names(downsampled.data) <- gsub("population", "cellType", names(downsampled.data))
     
     #Change cellType to be numbers
