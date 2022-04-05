@@ -249,8 +249,9 @@ process_files <- function(files.list, G.attractors, tab.attractors, att.labels, 
         G.complete <- get_highest_scoring_edges(res$G.complete)
         clustered.data <- my_load(gsub("txt$", "all_events.RData", f))
         names(clustered.data) <- map_names(names(clustered.data))
-        clustered.data <- downsample_by(clustered.data, "cellType", 1000)
-        
+        clustered.data <- downsample_by(clustered.data, "cellType", 5000)
+#         clustered.data <- downsample_by(clustered.data, "cellType", 1000)
+	    
         ret$graphs[basename(f)] <- list(G.complete)
         ret$clustered.data[basename(f)] <- list(clustered.data)
         
